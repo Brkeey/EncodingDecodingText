@@ -143,6 +143,7 @@ class SignalDecoder:
         decoded_chars = []
         last_char = None
         debounce_counter = 0
+        silence_counter = 0
         
         num_windows = (len(signal) - self.window_samples) // self.hop_samples + 1
         
@@ -161,19 +162,23 @@ class SignalDecoder:
                 char = self.frequency_mapper.get_character(low_freq, high_freq)
                 
                 if char is not None:
+                    silence_counter = 0
+                    
                     if char == last_char:
                         debounce_counter += 1
                     else:
-                        if debounce_counter >= debounce_windows or last_char is None:
-                            if char != last_char:
-                                decoded_chars.append(char)
-                                last_char = char
-                                debounce_counter = 0
+                        if last_char is None or debounce_counter >= debounce_windows:
+                            decoded_chars.append(char)
+                            last_char = char
+                            debounce_counter = 1
+                        else:
+                            debounce_counter += 1
             else:
-                if debounce_counter > 0:
-                    debounce_counter -= 1
-                if debounce_counter == 0:
+                silence_counter += 1
+                
+                if silence_counter >= debounce_windows:
                     last_char = None
+                    debounce_counter = 0
         
         return ''.join(decoded_chars)
     
