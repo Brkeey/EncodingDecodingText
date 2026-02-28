@@ -246,9 +246,9 @@ Proje şu kriterlere göre değerlendirilecektir:
 Bu proje COE216 Sinyal ve Sistemler dersi kapsamında geliştirilmiştir.
 
 ### Grup Üyeleri
-- [İsim 1] - [Katkı alanları]
-- [İsim 2] - [Katkı alanları]
-- [İsim 3] - [Katkı alanları]
+- [Berke] - [Kod Yazımı ve Test]
+- [Muhammed] - [Raporlama]
+- [Mert] - [Raporlama]
 
 ### Kullanılan Kaynaklar
 - Python Official Documentation
@@ -258,17 +258,12 @@ Bu proje COE216 Sinyal ve Sistemler dersi kapsamında geliştirilmiştir.
 - Goertzel Algorithm Papers
 
 ### Kullanılan AI Araçları
-- [AI aracı adı] - [Kullanım amacı]
+- [Cursor] - [Kod Yazımı]
 
 ## 📄 Lisans
 
-Bu proje eğitim amaçlıdır ve Özyeğin Üniversitesi COE216 dersi için hazırlanmıştır.
+Bu proje eğitim amaçlıdır ve İSTUN COE216 dersi için hazırlanmıştır.
 
-## 📞 İletişim
-
-Sorular ve geri bildirimler için:
-- GitHub Issues
-- E-posta: [grup e-postası]
 
 ---
 
